@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import Cart from './components/cart'
 import MenuModal from './components/MenuModal'
 import { IconContext } from "react-icons";
+import AIChat from "./components/AIChat";
 
 function App() {
 
@@ -86,6 +87,9 @@ function App() {
           <Route path="/products/:id/" element={ <SingleProduct user={user} setUser={setUser} token={token} setToken={setToken} />} />
           <Route path="cart/users/:id" element={<Cart setPurchasedProducts={setPurchasedProducts} purchasedProducts={purchasedProducts} cartProd={cartProd} setCartProd={setCartProd} setToken={setToken} token={token} user={user} setUser={setUser} />}   />
         </Routes>
+         {/* AI chat is put here for testing. Due to having to integrate to new Github, we are still
+         in the process of setting it up again*/}
+      <AIChat />
     </>
   )
 

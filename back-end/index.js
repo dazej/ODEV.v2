@@ -1,4 +1,5 @@
 const express = require("express")
+import aiRoutes from "./AI/aiRoutes.js";
 const app = express()
 // able to read string
 app.use(express.json())
@@ -13,6 +14,8 @@ const { PORT = 3000 } = process.env;
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
+
+app.use("/api/ai", aiRoutes);
 
 const path = require('path');
 app.use('/docs', express.static(path.join(__dirname, './front-end/odev-front-end')));
