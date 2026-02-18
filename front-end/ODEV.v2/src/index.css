@@ -1,68 +1,531 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{
+  height: 100%;
+  width: 100%;
+  border: 0%;
+  margin: 0%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+body{
+  height: 100%;
+  width: 100%;
+  border: 0%;
+  margin: 0%;
 }
 
-body {
-  margin: 0;
+.root ,:root {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  border: 0%;
+  margin: 0%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#nav{
+  box-shadow: 0 0 12px 1px black;
+  align-items: center;
+  background-color: rgb(30, 91, 66);
+  color: black;
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#title{
+  font-size: 50px;
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.nav-buttons{
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+  padding: 3%;
+  border-top: solid black 1px;
+  text-decoration: none;
+}
+
+.nav-buttons :visited{
+  font-size: 25px;
+  color: azure;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.nav-buttons:hover{
+ background-color: rgb(92, 131, 92);
+}
+
+.product-link:link{
+  text-decoration: none;
+  color: black;
+}
+.product-link:visited{
+  text-decoration: none;
+  color: black;
+}
+
+.modal{
+  height: 85%;
+  width: 50%;
+  bottom: 10%;
+  left: 25%;
+  position: fixed;
+  z-index: -0;
+  background-color: rgb(59, 86, 139);
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  border-radius: 10px;
+  transition: all 1s ease;
+}
+
+.addmodal{
+  height: 90%;
+  width: 70%;
+  left: 15%;
+  bottom: 5%;
+  z-index: 2;
+  position: fixed;
+  background-color: rgb(54, 71, 105);
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  border-radius: 10px;
+  box-shadow: 0 0 12px 1px black;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+  transition: all 1s ease;
+}
+
+.modal-containter{
+  position: relative;
+  z-index: 1;
+}
+.modalinput{
+  width: 70%;
+  height: 30px;
+  border-radius: 5px;
+}
+.modal-tags{
+  font-size: 15px;
+}
+
+.single-prod-container{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.products-container{
+  height: 100%;
+  width: 100%;
+}
+.products-div{
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 350px;
+  width: 250px;
+  margin: 1%;
+  padding: 1%;
+  /* border: 1px solid rgb(187, 183, 183); */
+  z-index: 2;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 2px 1px rgb(214, 211, 211);
+  font-size: 20px;
+  font-family: "Merriweather", serif;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  font-style: normal;
 }
-button:hover {
-  border-color: #646cff;
+.product:hover{
+  box-shadow: 0 0 2px 1px rgb(54, 53, 53);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.products-button{
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 1px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid rgb(187, 183, 183);
+}
+.products-button:hover{
+  box-shadow: 0 0 1px 1px rgb(54, 53, 53);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.img-all{
+  height: 200px;
+  width: 175px;
+  border-radius: 2%;
+}
+
+.account-container{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  background-color: white; 
+}
+
+.all-users-title{
+  font-size: 20px;
+}
+.all-users{
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 60%;
+  position: fixed;
+  z-index: -0;
+  background-color: rgb(59, 86, 139);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  bottom: 5%;
+  font-size: 20px;
+  overflow: scroll;
+  transition: all 1s ease;
+}
+
+.all-users-view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18%;
+  width: 90%;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid rgb(187, 183, 183);
+  z-index: 2;
+  border-radius: 5px;
+  font-size: 8px;
+  text-align: center;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+}
+
+.all-users-details{
+  font-size: 15px;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.single-prod-container{
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.singleProdDiv{
+  display: flex;
+  /* height: 100%;
+  width: 100%; */
+  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+.singleProdImg{
+  width: 400px;
+  height: 500px;
+  /* border: solid black 1px; */
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px rgb(134, 134, 134);
+}
+
+.singeprod-button{
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+  position: static;
+  margin: 5px;
+  background-color: rgb(173, 172, 172);
+  border-radius: 5px;
+  border: 1px solid rgb(187, 183, 183);
+}
+
+.prod-details{
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px rgb(134, 134, 134);
+  padding: 2%;
+  padding-left: 4%;
+  padding-right: 4%
+}
+
+#cart{
+  width: 35%;
+  margin: 5%;
+  padding: 1%;
+  border: 1px solid rgb(187, 183, 183);
+  z-index: 2;
+  text-align: center;
+  box-shadow: 0 0 2px 1px rgb(214, 211, 211);
+  border-radius: 5px;
+  font-family: "Merriweather", serif;
+}
+
+#quantity-button{
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 5%;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid rgb(187, 183, 183);
+  
+}
+
+.cart-container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+}
+
+#cart-details {
+  font-size: large;
+  font-family: "Merriweather", serif;
+}
+
+#cart-button{
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 1px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid rgb(187, 183, 183);
+
+}
+
+
+a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+#front {
+  background-image: url("https://wallpapers.com/images/hd/trendy-women-s-clothing-store-o1hw41upaeojuonq.jpg");
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 99%;
+  border: 0;
+}
+
+.home-text{
+  text-align: start;
+  position: absolute;
+  top: 30%;
+  bottom: 50%;
+  left: 25%;
+  color: antiquewhite;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+#front-button {
+  background-color: lemonchiffon;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 0 5px 1px rgb(134, 134, 134);
+  border-radius: 20px;
+}
+
+.account-title{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.orders{
+  display: flex;
+  text-align: center;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 5px 1px rgb(134, 134, 134);
+  padding: 2%;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  max-width: 50%;
+}
+
+.orders-view{
+  display: flex;
+}
+
+.account-details{
+ text-align: center;
+ box-shadow: 0 0 5px 1px rgb(134, 134, 134);
+ padding: 2%;
+ flex-wrap: wrap;
+ border-radius: 10px;
+ max-width: 50%;
+}
+
+
+.reg-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form{
+  background-color: rgb(30, 91, 66);
+  margin-top: 5%;
+  padding: 2%;
+  width: 40%;
+  height: 50%;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+  border-radius: 10px;
+}
+
+.login-input{
+  width: 70%;
+  height: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.login{
+  font-size: 15px;
+  background-color: azure;
+  border: none;
+  border-radius: 5px;
+}
+
+.menumodal{
+  display: flex;
+  width: 20%;
+  height: 35%;
+  left:80%;
+  bottom: 65%;
+  z-index: 3;
+  position: fixed;
+  background-color: rgb(42, 100, 76);
+  justify-content: left;
+  align-items: left;
+  flex-direction: column;
+  font-size: 10px;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+  border-radius: 10px;
+  transition: all 3s ease;
+}
+.menu-button{
+  left: 100px;
+  margin-right: 50px;
+  height: 100%;
+  border: white;
+  border-radius: 5px;
+}
+
+#buttons{
+width: 130px;
+display: flex;
+justify-content: space-between;
+}
+
+.menu-close{
+  display: flex;
+  margin: 2%;
+  margin-bottom: 3%;
+}
+
+.menu-items{
+  width: 100%;
+  height: 25px;
+  background-color: all white;
+  border: none;
+}
+
+.close-button{
+  border: white;
+  border-radius: 5px;
+}
+
+.menu-icons{
+  vertical-align:middle;
+}
+
+.products-search{
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  justify-content: space-evenly;
+}
+
+.add-button{
+  display: flex;
+  justify-content: center;
+}
+
+.searchinput{
+  width: 350px;
+  height: 30px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.search-bottom{
+  height: 100px;
+  width: 25%;
+  overflow: scroll;
+  z-index: 1;
+  position: absolute;
+  top: 18%;
+  background-color: rgb(197, 169, 146);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.searchresults{
+  display: flex;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 1px;
+  padding: 1%;
+  border-top: solid black 1px;
+}
+.searchresults:hover{
+  font-size: 18px;
 }
